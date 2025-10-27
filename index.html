@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Course Home — Your Name</title>
+<meta name="description" content="Course home page for WDD231 — Web Frontend Development." />
+<meta name="author" content="Zach Bruce" />
+
+
+<link rel="stylesheet" href="css/small.css">
+<link rel="stylesheet" href="css/larger.css">
+
+
+<script defer src="scripts/navigation.js"></script>
+<script defer src="scripts/date.js"></script>
+<script defer src="scripts/courses.js"></script>
+</head>
+<body>
+<header class="site-header">
+<div class="brand">
+<img src="images/logo.svg" alt="Site logo" class="logo" />
+<span class="owner">Zach Bruce</span>
+</div>
+
+
+<button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+<span class="sr-only">Toggle navigation</span>☰
+</button>
+
+
+<nav id="site-nav" class="site-nav" role="navigation">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="chamber/index.html">Chamber</a></li>
+<li><a href="final/index.html">Final</a></li>
+</ul>
+</nav>
+</header>
+
+
+<main>
+<h1>Home</h1>
+
+
+<section id="intro" class="card">
+<h2>Welcome</h2>
+<p>Welcome to WDD231 — Web Frontend Development.</p>
+</section>
+
+
+<section id="courses" class="card">
+<h2>Courses</h2>
+
+
+<div class="controls">
+<button data-filter="all">All Courses</button>
+<button data-filter="wdd">WDD Courses</button>
+<button data-filter="cse">CSE Courses</button>
+</div>
+
+
+<div id="course-list" class="course-list" aria-live="polite"></div>
+</html>

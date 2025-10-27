@@ -1,0 +1,63 @@
+:root{
+--gap: 1rem;
+--max-width: 1100px;
+--accent: #0a66c2;
+--bg: #ffffff;
+--text: #222;
+font-size: 16px;
+}
+
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+margin:0;
+font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+color:var(--text);
+background:var(--bg);
+line-height:1.4;
+padding:1rem;
+}
+
+
+.site-header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:var(--gap);
+}
+
+
+.brand{display:flex;align-items:center;gap:.5rem}
+.logo{width:48px;height:auto}
+.owner{font-weight:700}
+
+
+.nav-toggle{
+background:none;border:1px solid #ccc;padding:.4rem .6rem;border-radius:6px;
+display:inline-block;
+}
+
+
+.sr-only{position:absolute;left:-9999px}
+
+
+.site-nav{display:none}
+.site-nav ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.25rem}
+.site-nav a{text-decoration:none;color:var(--accent)}
+
+
+main{max-width:var(--max-width);margin:1rem auto;display:grid;gap:var(--gap)}
+.card{background:#fafafa;border:1px solid #eee;padding:1rem;border-radius:8px}
+
+
+.course-list{display:grid;gap:.5rem}
+.course-card{border:1px dashed #ddd;padding:.5rem;border-radius:6px}
+
+
+.controls{display:flex;gap:.5rem;flex-wrap:wrap}
+.controls button{padding:.4rem .6rem;border-radius:4px;border:1px solid #ccc;background:white}
+
+
+.site-footer{max-width:var(--max-width);margin:1rem auto;display:flex;flex-direction:column;gap:.5rem;align-items:flex-start}
+.socials a{margin-right:.5rem}

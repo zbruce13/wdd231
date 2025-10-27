@@ -1,0 +1,8 @@
+@media (min-width: 48rem) {
+body{font-size:18px}
+.site-nav{display:block}
+.site-nav ul{flex-direction:row;gap:1rem}
+.site-header{padding:0 1rem}
+main{grid-template-columns:2fr 1fr;align-items:start;gap:1.25rem}
+.site-footer{flex-direction:row;justify-content:space-between;align-items:center}
+}
