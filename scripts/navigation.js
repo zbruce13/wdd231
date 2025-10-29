@@ -1,12 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const navToggle = document.getElementById("navToggle");
-  const siteNav = document.getElementById("site-nav");
+const menuButton = document.querySelector("#menu");
+const nav = document.querySelector("nav");
 
-  if (!navToggle || !siteNav) return;
-
-  navToggle.addEventListener("click", () => {
-    const expanded = navToggle.getAttribute("aria-expanded") === "true";
-    navToggle.setAttribute("aria-expanded", String(!expanded));
-    siteNav.style.display = expanded ? "none" : "block";
-  });
+menuButton.addEventListener("click", () => {
+    nav.classList.toggle("open");
 });
