@@ -1,8 +1,20 @@
-@media (min-width: 48rem) {
-body{font-size:18px}
-.site-nav{display:block}
-.site-nav ul{flex-direction:row;gap:1rem}
-.site-header{padding:0 1rem}
-main{grid-template-columns:2fr 1fr;align-items:start;gap:1.25rem}
-.site-footer{flex-direction:row;justify-content:space-between;align-items:center}
+@media only screen and (min-width: 32rem) {
+    nav {
+        display: flex !important;
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    .course-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    main {
+        max-width: 1200px;
+        margin: auto;
+    }
 }
