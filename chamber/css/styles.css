@@ -1,0 +1,60 @@
+:root{
+  --bg:#ffffff;
+  --ink:#1f2328;
+  --muted:#5b6570;
+  --brand:#0a66c2;
+  --card:#f6f8fa;
+  --radius:12px;
+  --maxw:1100px;
+  --gap:1rem;
+}
+
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;}
+
+.site-header{
+  max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:.8rem 1rem;border-bottom:1px solid #e6e8eb;
+}
+.brand{display:flex;align-items:center;gap:.6rem}
+.brand-logo{width:40px;height:40px;border-radius:10px}
+.brand-name{font-weight:700}
+
+#menu{border:1px solid #d0d7de;background:var(--bg);padding:.35rem .6rem;border-radius:8px;cursor:pointer}
+
+#primary-nav{display:none;flex-direction:column;gap:.5rem}
+#primary-nav a{text-decoration:none;color:var(--brand)}
+#primary-nav a.active{font-weight:700;text-decoration:underline}
+#primary-nav.open{display:flex}
+
+main{max-width:var(--maxw);margin:0 auto;padding:1rem;display:grid;gap:var(--gap)}
+h1{font-size:1.6rem}
+
+.view-controls{display:flex;gap:.5rem}
+.view-controls button{border:1px solid #d0d7de;background:var(--bg);padding:.4rem .7rem;border-radius:8px;cursor:pointer}
+.view-controls button.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+
+#members{display:grid;gap:var(--gap)}
+#members.grid{grid-template-columns:1fr}
+.member{background:var(--card);border:1px solid #d0d7de;border-radius:var(--radius);padding:1rem;display:grid;gap:.6rem}
+.member .top{display:flex;gap:.75rem;align-items:center}
+.member .top img{width:64px;height:64px;border-radius:10px;object-fit:cover}
+.member h2{font-size:1.1rem}
+.member .meta{color:var(--muted);font-size:.95rem}
+.member .actions a{color:var(--brand);text-decoration:none;word-break:break-word}
+
+#members.list .top img{display:none}
+
+@media (min-width:48rem){
+  #menu{display:none}
+  #primary-nav{display:flex;flex-direction:row}
+  #members.grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #members.list .member{grid-template-columns:1fr}
+}
+
+.site-footer{
+  max-width:var(--maxw);margin:1.5rem auto 2rem;padding:1rem;border-top:1px solid #e6e8eb;display:grid;gap:.5rem
+}
+.site-footer a{color:var(--brand);text-decoration:none}
+.list img {
+  display: none;
+}
