@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You | Salt Lake City Chamber</title>
+
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ✅ Your real header -->
+<header class="site-header">
+  <div class="brand">
+    <img class="brand-logo" src="images/SunriseCafe.png" alt="Salt Lake City Chamber logo" />
+    <span class="brand-name">Salt Lake City Chamber</span>
+  </div>
+
+  <button id="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <nav id="primary-nav" aria-label="Primary">
+    <a href="../index.html">Home</a>
+    <a href="directory.html">Directory</a>
+    <a href="#">Events</a>
+    <a href="#">Contact</a>
+    <a href="join.html" class="active">Join</a>
+  </nav>
+</header>
+
+<main class="join-container">
+  <section class="join-form" style="max-width: 600px; margin: auto;">
+    <h2>Thank You!</h2>
+    <p>Your membership application has been received.</p>
+
+    <h3>Submitted Information:</h3>
+    <p><strong>First Name:</strong> <span id="fname"></span></p>
+    <p><strong>Last Name:</strong> <span id="lname"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Phone:</strong> <span id="phone"></span></p>
+    <p><strong>Organization:</strong> <span id="organization"></span></p>
+    <p><strong>Submission Date:</strong> <span id="timestamp"></span></p>
+
+    <br>
+    <a href="../index.html" class="submit-btn">Return to Home</a>
+  </section>
+</main>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  document.getElementById("fname").textContent = params.get("fname");
+  document.getElementById("lname").textContent = params.get("lname");
+  document.getElementById("email").textContent = params.get("email");
+  document.getElementById("phone").textContent = params.get("phone");
+  document.getElementById("organization").textContent = params.get("organization");
+  document.getElementById("timestamp").textContent = params.get("timestamp");
+</script>
+
+<!-- ✅ Your real footer -->
+<footer class="site-footer">
+  <div>
+    <p>Salt Lake City Chamber</p>
+    <p>123 Main St, Salt Lake City, UT</p>
+    <p><a href="tel:+18015550123">+1 (801) 555-0123</a></p>
+    <p><a href="mailto:info@saltlakechamber.org">info@saltlakechamber.org</a></p>
+  </div>
+
+  <div>
+    <p>© <span id="year"></span> Zach Bruce · WDD 231</p>
+    <p id="lastModified"></p>
+  </div>
+</footer>
+
+</body>
+</html>
