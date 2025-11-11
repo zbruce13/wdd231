@@ -3,16 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Salt Lake City Chamber</title>
 
+  <title>Salt Lake City Chamber | Home</title>
+  <meta name="description" content="Salt Lake City Chamber of Commerce - Business networking, events, and community growth.">
+
+  <!-- ✅ Correct stylesheet path -->
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 
-  <meta name="description" content="Salt Lake City Chamber of Commerce - Supporting businesses and community growth.">
   <meta name="author" content="Zach Bruce" />
 </head>
 <body>
 
+<!-- ✅ HEADER (same as join.html) -->
 <header class="site-header">
   <div class="brand">
     <img class="brand-logo" src="images/SunriseCafe.png" alt="Salt Lake City Chamber logo" />
@@ -20,6 +23,7 @@
   </div>
 
   <button id="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
   <nav id="primary-nav" aria-label="Primary">
     <a class="active" href="index.html">Home</a>
     <a href="directory.html">Directory</a>
@@ -31,10 +35,10 @@
 
 <main>
 
-  <!-- ✅ HERO SECTION -->
+  <!-- ✅ HERO SECTION WITH CTA -->
   <section class="hero">
     <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80"
-         alt="Salt Lake City skyline business district">
+         alt="Salt Lake City business skyline">
     <a href="join.html" class="cta-btn">Become a Member</a>
   </section>
 
@@ -42,16 +46,15 @@
   <section class="events">
     <h2>Current Events</h2>
     <ul>
-      <li>⚡ Business Networking Breakfast — November 20</li>
-      <li>📣 Small Business Marketing Workshop — November 28</li>
-      <li>🎄 Holiday Chamber Gala — December 15</li>
+      <li>⚡ Business Networking Breakfast — Nov 20</li>
+      <li>📣 Small Business Marketing Workshop — Nov 28</li>
+      <li>🎄 Holiday Chamber Gala — Dec 15</li>
     </ul>
   </section>
 
-  <!-- ✅ WEATHER SECTION -->
+  <!-- ✅ WEATHER SECTION (populated by API) -->
   <section class="weather">
     <h2>Weather</h2>
-
     <p><strong>Current Temperature:</strong> <span id="temp"></span> °F</p>
     <p><strong>Conditions:</strong> <span id="description"></span></p>
 
@@ -59,7 +62,7 @@
     <ul id="forecast"></ul>
   </section>
 
-  <!-- ✅ SPOTLIGHT SECTION -->
+  <!-- ✅ MEMBER SPOTLIGHTS -->
   <section class="spotlights">
     <h2>Member Spotlights</h2>
     <div id="spotlight-container"></div>
@@ -67,7 +70,7 @@
 
 </main>
 
-
+<!-- ✅ FOOTER (same as join.html) -->
 <footer class="site-footer">
   <div>
     <p>Salt Lake City Chamber</p>
@@ -82,8 +85,9 @@
   </div>
 </footer>
 
-<script src="scripts/home.js" defer></script>
+<!-- ✅ Correct script paths -->
 <script src="scripts/getdates.js" defer></script>
+<script src="scripts/home.js" defer></script>
 
 </body>
 </html>
