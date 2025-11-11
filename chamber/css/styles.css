@@ -1,3 +1,6 @@
+/* =========================================
+   ROOT VARIABLES
+========================================= */
 :root{
   --bg:#ffffff;
   --ink:#1f2328;
@@ -9,11 +12,26 @@
   --gap:1rem;
 }
 
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.5;
+  margin:0;
+}
 
+/* =========================================
+   HEADER & NAVIGATION
+========================================= */
 .site-header{
-  max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  padding:.8rem 1rem;border-bottom:1px solid #e6e8eb;
+  max-width:var(--maxw);
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.8rem 1rem;
+  border-bottom:1px solid #e6e8eb;
 }
 .brand{display:flex;align-items:center;gap:.6rem}
 .brand-logo{width:40px;height:40px;border-radius:10px}
@@ -26,146 +44,111 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:
 #primary-nav a.active{font-weight:700;text-decoration:underline}
 #primary-nav.open{display:flex}
 
-main{max-width:var(--maxw);margin:0 auto;padding:1rem;display:grid;gap:var(--gap)}
-h1{font-size:1.6rem}
-
-.view-controls{display:flex;gap:.5rem}
-.view-controls button{border:1px solid #d0d7de;background:var(--bg);padding:.4rem .7rem;border-radius:8px;cursor:pointer}
-.view-controls button.active{background:var(--brand);color:#fff;border-color:var(--brand)}
-
-#members{display:grid;gap:var(--gap)}
-#members.grid{grid-template-columns:1fr}
-.member{background:var(--card);border:1px solid #d0d7de;border-radius:var(--radius);padding:1rem;display:grid;gap:.6rem}
-.member .top{display:flex;gap:.75rem;align-items:center}
-.member .top img{width:64px;height:64px;border-radius:10px;object-fit:cover}
-.member h2{font-size:1.1rem}
-.member .meta{color:var(--muted);font-size:.95rem}
-.member .actions a{color:var(--brand);text-decoration:none;word-break:break-word}
-
-#members.list .top img{display:none}
-
 @media (min-width:48rem){
   #menu{display:none}
   #primary-nav{display:flex;flex-direction:row}
-  #members.grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-  #members.list .member{grid-template-columns:1fr}
 }
 
+/* =========================================
+   FOOTER
+========================================= */
 .site-footer{
-  max-width:var(--maxw);margin:1.5rem auto 2rem;padding:1rem;border-top:1px solid #e6e8eb;display:grid;gap:.5rem
+  max-width:var(--maxw);
+  margin:1.5rem auto 2rem;
+  padding:1rem;
+  border-top:1px solid #e6e8eb;
+  display:grid;
+  gap:.5rem;
 }
 .site-footer a{color:var(--brand);text-decoration:none}
-.list img {
-  display: none;
-}
-/* ============================
-   HERO SECTION (HOME PAGE)
-============================ */
-.hero {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-}
 
-.hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+/* =========================================
+   HOME PAGE: HERO SECTION
+========================================= */
+.hero{
+  position:relative;
+  width:100%;
+  height:300px;
+  overflow:hidden;
 }
-
-/* CTA BUTTON ON HERO IMAGE */
-.cta-btn {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #0a9396;
-    color: white;
-    text-decoration: none;
-    padding: 1rem 1.6rem;
-    border-radius: 8px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    transition: background .3s;
+.hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
-
-.cta-btn:hover {
-    background-color: #13b8bd;
+.cta-btn{
+  position:absolute;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  background-color:#0a9396;
+  color:white;
+  font-weight:bold;
+  padding:1rem 1.6rem;
+  font-size:1.3rem;
+  border-radius:8px;
+  text-decoration:none;
+  transition:background .3s;
 }
+.cta-btn:hover{background:#13b8bd}
 
-/* ============================
-   HOME PAGE MAIN SECTIONS
-============================ */
-main {
-    max-width: 1200px;
-    margin: auto;
-    padding: 2rem 1rem;
+/* =========================================
+   HOME PAGE: GRID LAYOUT
+========================================= */
+.home-layout{
+  max-width:1200px;
+  margin:0 auto;
+  padding:2rem 1rem;
+  display:flex;
+  flex-direction:column;
+  gap:2rem;
 }
 
-/* SECTION HEADINGS */
-.events h2,
-.weather h2,
-.spotlights h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #0a4d68;
+.content-sections{
+  display:grid;
+  gap:2rem;
 }
 
-/* EVENT LIST STYLING */
-.events ul {
-    list-style: none;
-    margin-left: 0;
+.card{
+  background:white;
+  padding:1.4rem;
+  border-radius:12px;
+  box-shadow:0 2px 6px rgba(0,0,0,.15);
 }
 
-.events li {
-    padding: 0.4rem 0;
+@media (min-width:900px){
+  .content-sections{
+    grid-template-columns:1fr 1fr;
+  }
+  .spotlights{grid-column:span 2;}
 }
 
-/* WEATHER BOX */
-.weather {
-    background: #eef9ff;
-    padding: 1.4rem;
-    border-radius: 10px;
-    margin-top: 2rem;
+/* =========================================
+   SPOTLIGHT CARDS
+========================================= */
+#spotlight-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.4rem;
 }
 
-/* SPOTLIGHT GRID */
-#spotlight-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.4rem;
-    margin-top: 1.4rem;
+.spotlight-card{
+  background:white;
+  padding:1rem;
+  border-radius:10px;
+  text-align:center;
+  box-shadow:0 3px 10px rgba(0,0,0,0.15);
+}
+.spotlight-card img{
+  width:120px;
+  margin-bottom:.6rem;
 }
 
-.spotlight-card {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+/* =========================================
+   MOBILE
+========================================= */
+@media(max-width:800px){
+  .hero{height:200px;}
+  .cta-btn{font-size:1rem;padding:.7rem 1rem;}
 }
-
-.spotlight-card img {
-    width: 120px;
-    border-radius: 6px;
-    margin-bottom: 0.6rem;
-}
-
-/* MOBILE RESPONSIVE FIXES */
-@media (max-width: 800px) {
-    .hero {
-        height: 200px;
-    }
-
-    main {
-        padding: 1rem;
-    }
-
-    .cta-btn {
-        font-size: 1rem;
-        padding: 0.7rem 1rem;
-    }
-}
-
