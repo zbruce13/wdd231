@@ -1,58 +1,60 @@
-[
-  {
-    "name": "Sunrise Café",
-    "address": "123 Palm Ave, Salt Lake City, UT",
-    "phone": "801-555-1010",
-    "website": "https://sunrisecafe.example.com",
-    "image": "SunriseCafe.png",
-    "membership": 3
-  },
-  {
-    "name": "GreenLeaf Landscaping",
-    "address": "44 Meadow Rd, Salt Lake City, UT",
-    "phone": "801-555-2020",
-    "website": "https://greenleaf.example.com",
-    "image": "GreenLeaf.png",
-    "membership": 2
-  },
-  {
-    "name": "Good Eats",
-    "address": "78 Market St, Salt Lake City, UT",
-    "phone": "801-555-3030",
-    "website": "https://goodeats.example.com",
-    "image": "GoodEats.png",
-    "membership": 1
-  },
-  {
-    "name": "Modern Dry Cleaning",
-    "address": "19 Clean Ave, Salt Lake City, UT",
-    "phone": "801-555-4040",
-    "website": "https://moderndrycleaning.example.com",
-    "image": "ModernDryCleaning.png",
-    "membership": 2
-  },
-  {
-    "name": "Tech Solutions",
-    "address": "500 Innovation Dr, Salt Lake City, UT",
-    "phone": "801-555-5050",
-    "website": "https://techsolutions.example.com",
-    "image": "Techsolutions.png",
-    "membership": 3
-  },
-  {
-    "name": "Happy Home",
-    "address": "12 Comfort Ln, Salt Lake City, UT",
-    "phone": "801-555-6060",
-    "website": "https://happyhome.example.com",
-    "image": "HappyHome.png",
-    "membership": 2
-  },
-  {
-    "name": "City Hotel",
-    "address": "1 Grand Plaza, Salt Lake City, UT",
-    "phone": "801-555-7070",
-    "website": "https://cityhotel.example.com",
-    "image": "CityHotel.png",
-    "membership": 3
-  }
-]
+{
+  "members": [
+    {
+      "name": "Sunrise Café",
+      "address": "123 Palm Ave, Salt Lake City, UT",
+      "phone": "801-555-1010",
+      "website": "https://sunrisecafe.example.com",
+      "image": "images/SunriseCafe.png",
+      "membership": "gold"
+    },
+    {
+      "name": "GreenLeaf Landscaping",
+      "address": "44 Meadow Rd, Salt Lake City, UT",
+      "phone": "801-555-2020",
+      "website": "https://greenleaf.example.com",
+      "image": "images/GreenLeaf.png",
+      "membership": "silver"
+    },
+    {
+      "name": "Good Eats",
+      "address": "78 Market St, Salt Lake City, UT",
+      "phone": "801-555-3030",
+      "website": "https://goodeats.example.com",
+      "image": "images/GoodEats.png",
+      "membership": "bronze"
+    },
+    {
+      "name": "Modern Dry Cleaning",
+      "address": "19 Clean Ave, Salt Lake City, UT",
+      "phone": "801-555-4040",
+      "website": "https://moderndrycleaning.example.com",
+      "image": "images/ModernDryCleaning.png",
+      "membership": "silver"
+    },
+    {
+      "name": "Tech Solutions",
+      "address": "500 Innovation Dr, Salt Lake City, UT",
+      "phone": "801-555-5050",
+      "website": "https://techsolutions.example.com",
+      "image": "images/Techsolutions.png",
+      "membership": "gold"
+    },
+    {
+      "name": "Happy Home",
+      "address": "12 Comfort Ln, Salt Lake City, UT",
+      "phone": "801-555-6060",
+      "website": "https://happyhome.example.com",
+      "image": "images/HappyHome.png",
+      "membership": "silver"
+    },
+    {
+      "name": "City Hotel",
+      "address": "1 Grand Plaza, Salt Lake City, UT",
+      "phone": "801-555-7070",
+      "website": "https://cityhotel.example.com",
+      "image": "images/CityHotel.png",
+      "membership": "gold"
+    }
+  ]
+}
