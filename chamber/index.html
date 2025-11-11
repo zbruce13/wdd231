@@ -1,96 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Salt Lake City Chamber | Home</title>
-  <meta name="description" content="Salt Lake City Chamber of Commerce - Business networking, events, and community growth.">
+  <title>Salt Lake City Chamber</title>
+
+  <meta name="description" content="Salt Lake City Chamber of Commerce - Business connections and community growth." />
   <meta name="author" content="Zach Bruce" />
 
-  <!-- ✅ Correct stylesheet paths -->
-  <link rel="stylesheet" href="css/normalize.css">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Salt Lake City Chamber" />
+  <meta property="og:description" content="Connect with local businesses through the Salt Lake Chamber." />
+  <meta property="og:type" content="website" />
+
+  <!-- ✅ Correct stylesheet path -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-<header class="site-header">
-  <div class="brand">
-    <img class="brand-logo" src="images/SunriseCafe.png" alt="Salt Lake City Chamber logo" />
-    <span class="brand-name">Salt Lake City Chamber</span>
-  </div>
+  <!-- HEADER -->
+  <header class="site-header">
+      <div class="brand">
+          <img class="brand-logo" src="images/SunriseCafe.png" alt="Chamber logo">
+          <span class="brand-name">Salt Lake City Chamber</span>
+      </div>
 
-  <button id="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <!-- Navigation -->
+      <nav id="primary-nav">
+          <a href="index.html" class="active">Home</a>
+          <a href="directory.html">Directory</a>
+          <a href="join.html">Join</a>
+      </nav>
+  </header>
 
-  <nav id="primary-nav" aria-label="Primary">
-    <a class="active" href="index.html">Home</a>
-    <a href="directory.html">Directory</a>
-    <a href="join.html">Join</a>
-  </nav>
-</header>
-
-
-<main class="home-layout">
-
-  <!-- ✅ HERO SECTION -->
+  <!-- ✅ HERO IMAGE WITH CTA BUTTON -->
   <section class="hero">
-    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80"
-         alt="Salt Lake City skyline business district">
-    <a href="join.html" class="cta-btn">Become a Member</a>
+      <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop" alt="Office workspace">
+      <a href="join.html" class="cta-btn">Become a Member</a>
   </section>
 
+  <main>
 
-  <!-- ✅ HOME SECTIONS GRID -->
-  <section class="content-sections">
+      <!-- ✅ CURRENT EVENTS -->
+      <section class="events card">
+          <h2>Current Events</h2>
+          <ul>
+              <li>⚡ Business Networking Breakfast — Nov 20</li>
+              <li>📣 Small Business Marketing Workshop — Nov 28</li>
+              <li>🎄 Holiday Chamber Gala — Dec 15</li>
+          </ul>
+      </section>
 
-    <!-- EVENTS -->
-    <section class="events card">
-      <h2>Current Events</h2>
-      <ul>
-        <li>⚡ Business Networking Breakfast — Nov 20</li>
-        <li>📣 Small Business Marketing Workshop — Nov 28</li>
-        <li>🎄 Holiday Chamber Gala — Dec 15</li>
-      </ul>
-    </section>
+      <!-- ✅ WEATHER DISPLAY -->
+      <section class="weather card">
+          <h2>Weather</h2>
+          <p>Current Temperature: <span id="temp"></span>°F</p>
+          <p>Conditions: <span id="description"></span></p>
+          <h3>3-Day Forecast</h3>
+          <ul id="forecast"></ul>
+      </section>
 
-    <!-- WEATHER -->
-    <section class="weather card">
-      <h2>Weather</h2>
-      <p><strong>Current Temperature:</strong> <span id="temp"></span> °F</p>
-      <p><strong>Conditions:</strong> <span id="description"></span></p>
+      <!-- ✅ MEMBER SPOTLIGHTS -->
+      <section class="spotlights">
+          <h2>Member Spotlights</h2>
+          <div id="spotlight-container"></div>
+      </section>
 
-      <h3>3-Day Forecast</h3>
-      <ul id="forecast"></ul>
-    </section>
+  </main>
 
-    <!-- SPOTLIGHTS -->
-    <section class="spotlights card">
-      <h2>Member Spotlights</h2>
-      <div id="spotlight-container"></div>
-    </section>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+      <p>Salt Lake City Chamber</p>
+      <p>123 Main St, Salt Lake City, UT</p>
+      <p><a href="tel:+18015550123">+1 (801) 555-0123</a></p>
+      <p><a href="mailto:info@saltlakechamber.org">info@saltlakechamber.org</a></p>
+      <p>© Zach Bruce • WDD 231</p>
+  </footer>
 
-  </section>
-</main>
-
-
-<footer class="site-footer">
-  <div>
-    <p>Salt Lake City Chamber</p>
-    <p>123 Main St, Salt Lake City, UT</p>
-    <p><a href="tel:+18015550123">+1 (801) 555-0123</a></p>
-    <p><a href="mailto:info@saltlakechamber.org">info@saltlakechamber.org</a></p>
-  </div>
-
-  <div>
-    <p>© <span id="year"></span> Zach Bruce · WDD 231</p>
-    <p id="lastModified"></p>
-  </div>
-</footer>
-
-<!-- ✅ SCRIPTS -->
-<script src="scripts/getdates.js" defer></script>
-<script src="scripts/home.js" defer></script>
+  <!-- ✅ REQUIRED SCRIPTS -->
+  <script src="scripts/getdates.js" defer></script>
+  <script src="scripts/home.js" defer></script>
 
 </body>
 </html>
