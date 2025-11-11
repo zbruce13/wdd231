@@ -1,24 +1,29 @@
-// ✅ WEATHER API
+// ✅ WEATHER API (Current + 3 Day Forecast)
 const apiKey = "5a2bb2a71a1be25c55c847a20c308304";
-const url = `https://api.openweathermap.org/data/2.5/forecast?q=Salt Lake City,US&appid=${apiKey}&units=imperial`;
+const url = `https://api.openweathermap.org/data/2.5/forecast?lat=40.7608&lon=-111.8910&appid=${apiKey}&units=imperial`;
 
 async function getWeather() {
-  const response = await fetch(url);
-  const data = await response.json();
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Weather API request failed");
 
-  // Current weather
-  document.querySelector("#temp").textContent = Math.round(data.list[0].main.temp);
-  document.querySelector("#description").textContent = data.list[0].weather[0].description;
+    const data = await response.json();
 
-  // 3-day forecast (every 24 hours approx)
-  const forecast = document.querySelector("#forecast");
-  forecast.innerHTML = "";
+    document.querySelector("#temp").textContent = Math.round(data.list[0].main.temp);
+    document.querySelector("#description").textContent = data.list[0].weather[0].description;
 
-  for (let i = 1; i <= 3; i++) {
-    const day = data.list[i * 8];
-    const li = document.createElement("li");
-    li.textContent = `${Math.round(day.main.temp)} °F — ${day.weather[0].description}`;
-    forecast.appendChild(li);
+    const forecast = document.querySelector("#forecast");
+    forecast.innerHTML = "";
+
+    for (let i = 1; i <= 3; i++) {
+      const day = data.list[i * 8];
+      const li = document.createElement("li");
+      li.textContent = `${Math.round(day.main.temp)} °F — ${day.weather[0].description}`;
+      forecast.appendChild(li);
+    }
+  } catch (err) {
+    console.error("Weather fetch error:", err);
+    document.querySelector("#description").textContent = "Weather unavailable";
   }
 }
 
@@ -29,13 +34,14 @@ async function getMembers() {
   const response = await fetch("data/members.json");
   const data = await response.json();
 
-  // Filter only SILVER & GOLD members
-  const qualified = data.members.filter(m => m.membership === "silver" || m.membership === "gold");
+  const qualified = data.members.filter(m =>
+    m.membership === "silver" || m.membership === "gold"
+  );
 
-  // Random shuffle
   const selected = qualified.sort(() => 0.5 - Math.random()).slice(0, 3);
 
   const container = document.querySelector("#spotlight-container");
+  container.innerHTML = ""; // clear previous results
 
   selected.forEach(member => {
     const card = document.createElement("div");
@@ -49,6 +55,7 @@ async function getMembers() {
       <a href="${member.website}" target="_blank">Visit Website</a>
       <p><strong>${member.membership.toUpperCase()} MEMBER</strong></p>
     `;
+
     container.appendChild(card);
   });
 }
