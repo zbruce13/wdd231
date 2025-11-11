@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<!-- ✅ Your real header -->
+<!-- ✅ YOUR REAL HEADER -->
 <header class="site-header">
   <div class="brand">
     <img class="brand-logo" src="images/SunriseCafe.png" alt="Salt Lake City Chamber logo" />
@@ -29,6 +29,7 @@
 
 <main class="join-container">
 
+  <!-- ✅ MEMBERSHIP APPLICATION FORM -->
   <form method="get" action="thankyou.html" class="join-form">
 
     <label>
@@ -44,7 +45,7 @@
     <label>
       Organizational Title
       <input type="text" name="orgTitle" autocomplete="organization-title"
-             pattern="[A-Za-z\- ]{7,}" placeholder="Example: Marketing Lead" required>
+        pattern="[A-Za-z\- ]{7,}" placeholder="Example: Marketing Lead" required>
     </label>
 
     <label>
@@ -78,35 +79,117 @@
       <textarea name="description"></textarea>
     </label>
 
+    <!-- ✅ Hidden timestamp -->
     <input type="hidden" id="timestamp" name="timestamp">
 
     <input type="submit" value="Submit Application" class="submit-btn">
   </form>
 
-  <!-- Membership Cards -->
+  <!-- ✅ MEMBERSHIP LEVEL CARDS -->
   <section class="membership-cards">
-    <div class="card fade-in"><h3>NP Membership</h3><p>Perfect for non-profits.</p><button data-modal="npModal">View Benefits</button></div>
-    <div class="card fade-in"><h3>Bronze Membership</h3><p>Basic benefits.</p><button data-modal="bronzeModal">View Benefits</button></div>
-    <div class="card fade-in"><h3>Silver Membership</h3><p>More exposure.</p><button data-modal="silverModal">View Benefits</button></div>
-    <div class="card fade-in"><h3>Gold Membership</h3><p>Maximum exposure.</p><button data-modal="goldModal">View Benefits</button></div>
+
+    <div class="card fade-in">
+      <h3>NP Membership</h3>
+      <p>Perfect for non-profits.</p>
+      <button data-modal="npModal">View Benefits</button>
+    </div>
+
+    <div class="card fade-in">
+      <h3>Bronze Membership</h3>
+      <p>Basic benefits.</p>
+      <button data-modal="bronzeModal">View Benefits</button>
+    </div>
+
+    <div class="card fade-in">
+      <h3>Silver Membership</h3>
+      <p>More exposure.</p>
+      <button data-modal="silverModal">View Benefits</button>
+    </div>
+
+    <div class="card fade-in">
+      <h3>Gold Membership</h3>
+      <p>Maximum exposure.</p>
+      <button data-modal="goldModal">View Benefits</button>
+    </div>
+
   </section>
 
 </main>
 
-<!-- Modals -->
-<div id="npModal" class="modal"><div class="modal-content"><span class="close">&times;</span><h3>NP Membership Benefits</h3><ul><li>No fee</li><li>Community listing</li><li>Networking events</li></ul></div></div>
-<div id="bronzeModal" class="modal"><div class="modal-content"><span class="close">&times;</span><h3>Bronze Benefits</h3><ul><li>Social media mentions</li><li>Discounted events</li></ul></div></div>
-<div id="silverModal" class="modal"><div class="modal-content"><span class="close">&times;</span><h3>Silver Benefits</h3><ul><li>Homepage spotlight</li><li>Training workshops</li></ul></div></div>
-<div id="goldModal" class="modal"><div class="modal-content"><span class="close">&times;</span><h3>Gold Benefits</h3><ul><li>VIP events</li><li>Priority advertising</li><li>Event sponsorship</li></ul></div></div>
+<!-- ✅ MODALS (hidden by default via CSS) -->
+<div id="npModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>NP Membership Benefits</h3>
+    <ul>
+      <li>No fee</li>
+      <li>Community listing</li>
+      <li>Networking events</li>
+    </ul>
+  </div>
+</div>
 
+<div id="bronzeModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Bronze Benefits</h3>
+    <ul>
+      <li>Social media mentions</li>
+      <li>Discounted events</li>
+    </ul>
+  </div>
+</div>
+
+<div id="silverModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Silver Benefits</h3>
+    <ul>
+      <li>Homepage spotlight</li>
+      <li>Training workshops</li>
+    </ul>
+  </div>
+</div>
+
+<div id="goldModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Gold Benefits</h3>
+    <ul>
+      <li>VIP events</li>
+      <li>Priority advertising</li>
+      <li>Event sponsorship</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ✅ MODAL SCRIPT -->
 <script>
-  document.querySelector("#timestamp").value = new Date().toISOString();
-  document.querySelectorAll("[data-modal]").forEach(btn => btn.onclick = () => document.getElementById(btn.dataset.modal).style.display = "block");
-  document.querySelectorAll(".close").forEach(c => c.onclick = () => document.querySelectorAll(".modal").forEach(m => m.style.display = "none"));
-  window.onclick = (e) => document.querySelectorAll(".modal").forEach(m => { if (e.target === m) m.style.display = "none";});
+document.querySelector("#timestamp").value = new Date().toISOString();
+
+// Open modals
+document.querySelectorAll("[data-modal]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.getElementById(btn.dataset.modal).style.display = "block";
+  });
+});
+
+// Close modals
+document.querySelectorAll(".close").forEach((closeBtn) => {
+  closeBtn.addEventListener("click", () => {
+    document.querySelectorAll(".modal").forEach((m) => (m.style.display = "none"));
+  });
+});
+
+// Close when click outside
+window.onclick = (event) => {
+  document.querySelectorAll(".modal").forEach((m) => {
+    if (event.target === m) m.style.display = "none";
+  });
+};
 </script>
 
-<!-- ✅ Your real footer -->
+<!-- ✅ YOUR REAL FOOTER -->
 <footer class="site-footer">
   <div>
     <p>Salt Lake City Chamber</p>
