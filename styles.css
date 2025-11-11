@@ -1,0 +1,252 @@
+/* ------------------------------
+   BASE / RESET
+------------------------------ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ------------------------------
+   HEADER / NAVIGATION
+------------------------------ */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0a4d68;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/* ✅ FIX: logo too large */
+.brand-logo {
+    max-width: 120px; /* adjust size here */
+    height: auto;
+}
+
+.brand-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* Mobile menu button */
+#menu {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Navigation links */
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: #1282a2;
+}
+
+/* Responsive nav menu toggle (mobile) */
+@media (max-width: 780px) {
+    #menu {
+        display: block;
+    }
+    nav {
+        display: none;
+        flex-direction: column;
+        background-color: #0a4d68;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        padding: 1rem;
+        width: 200px;
+    }
+    nav.show {
+        display: flex;
+    }
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+.site-footer {
+    background-color: #0a4d68;
+    color: white;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.site-footer a {
+    color: white;
+}
+
+.site-footer p {
+    margin: 0.25rem 0;
+}
+
+@media (max-width: 800px) {
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ------------------------------
+   JOIN FORM PAGE
+------------------------------ */
+.join-container {
+    display: grid;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.join-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.join-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.join-form input,
+.join-form select,
+.join-form textarea {
+    padding: 0.7rem;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+}
+
+.submit-btn {
+    background-color: #0084A8;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: #009fcc;
+}
+
+/* RESPONSIVE: 2-column layout on desktop */
+@media (min-width: 900px) {
+    .join-container {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}
+
+/* ------------------------------
+   MEMBERSHIP CARDS
+------------------------------ */
+.membership-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.card {
+    background: white;
+    padding: 1.4rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.card button {
+    margin-top: 0.6rem;
+    padding: 0.45rem 1.25rem;
+    border: none;
+    background-color: #0a9396;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #2ac6ca;
+}
+
+/* ------------------------------
+   CARD ANIMATION (on page load)
+------------------------------ */
+.fade-in {
+    opacity: 0;
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ------------------------------
+   MODALS
+------------------------------ */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 9999;
+}
+
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    width: 90%;
+    max-width: 420px;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
