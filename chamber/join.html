@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Join | Salt Lake City Chamber</title>
 
+  <!-- ✅ Correct CSS paths -->
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<!-- ✅ YOUR REAL HEADER -->
+<!-- ✅ HEADER -->
 <header class="site-header">
   <div class="brand">
     <img class="brand-logo" src="images/SunriseCafe.png" alt="Salt Lake City Chamber logo" />
@@ -23,48 +24,41 @@
     <a href="directory.html">Directory</a>
     <a href="#">Events</a>
     <a href="#">Contact</a>
-    <a href="join.html" class="active">Join</a>
+    <a class="active" href="join.html">Join</a>
   </nav>
 </header>
 
 <main class="join-container">
 
-  <!-- ✅ MEMBERSHIP APPLICATION FORM -->
+  <!-- ✅ FORM -->
   <form method="get" action="thankyou.html" class="join-form">
 
-    <label>
-      First Name
+    <label>First Name
       <input type="text" name="fname" autocomplete="given-name" required>
     </label>
 
-    <label>
-      Last Name
+    <label>Last Name
       <input type="text" name="lname" autocomplete="family-name" required>
     </label>
 
-    <label>
-      Organizational Title
+    <label>Organizational Title
       <input type="text" name="orgTitle" autocomplete="organization-title"
-        pattern="[A-Za-z\- ]{7,}" placeholder="Example: Marketing Lead" required>
+             pattern="[A-Za-z\- ]{7,}" placeholder="Example: Marketing Lead" required>
     </label>
 
-    <label>
-      Email
+    <label>Email
       <input type="email" name="email" autocomplete="email" placeholder="example@email.com" required>
     </label>
 
-    <label>
-      Mobile Phone
+    <label>Mobile Phone
       <input type="tel" name="phone" autocomplete="tel" required>
     </label>
 
-    <label>
-      Business / Organization Name
+    <label>Business / Organization Name
       <input type="text" name="organization" autocomplete="organization" required>
     </label>
 
-    <label>
-      Membership Level
+    <label>Membership Level
       <select name="membership" required>
         <option value="" disabled selected>Select one...</option>
         <option value="np">NP Membership (Free)</option>
@@ -74,18 +68,18 @@
       </select>
     </label>
 
-    <label>
-      Business Description
+    <label>Business Description
       <textarea name="description"></textarea>
     </label>
 
-    <!-- ✅ Hidden timestamp -->
+    <!-- ✅ timestamp inserted via JS -->
     <input type="hidden" id="timestamp" name="timestamp">
 
     <input type="submit" value="Submit Application" class="submit-btn">
   </form>
 
-  <!-- ✅ MEMBERSHIP LEVEL CARDS -->
+
+  <!-- ✅ MEMBERSHIP CARDS -->
   <section class="membership-cards">
 
     <div class="card fade-in">
@@ -113,10 +107,10 @@
     </div>
 
   </section>
-
 </main>
 
-<!-- ✅ MODALS (hidden by default via CSS) -->
+
+<!-- ✅ MODALS (now hidden by default) -->
 <div id="npModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
@@ -163,33 +157,35 @@
   </div>
 </div>
 
-<!-- ✅ MODAL SCRIPT -->
+<!-- ✅ SCRIPT -->
 <script>
-document.querySelector("#timestamp").value = new Date().toISOString();
+  /* timestamp */
+  document.querySelector("#timestamp").value = new Date().toISOString();
 
-// Open modals
-document.querySelectorAll("[data-modal]").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    document.getElementById(btn.dataset.modal).style.display = "block";
+  /* open modals */
+  document.querySelectorAll("[data-modal]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.getElementById(btn.dataset.modal).style.display = "block";
+    });
   });
-});
 
-// Close modals
-document.querySelectorAll(".close").forEach((closeBtn) => {
-  closeBtn.addEventListener("click", () => {
-    document.querySelectorAll(".modal").forEach((m) => (m.style.display = "none"));
+  /* close modals */
+  document.querySelectorAll(".close").forEach((closeBtn) => {
+    closeBtn.addEventListener("click", () => {
+      document.querySelectorAll(".modal").forEach((m) => m.style.display = "none");
+    });
   });
-});
 
-// Close when click outside
-window.onclick = (event) => {
-  document.querySelectorAll(".modal").forEach((m) => {
-    if (event.target === m) m.style.display = "none";
-  });
-};
+  /* close modals on click outside */
+  window.onclick = (event) => {
+    document.querySelectorAll(".modal").forEach((m) => {
+      if (event.target === m) m.style.display = "none";
+    });
+  };
 </script>
 
-<!-- ✅ YOUR REAL FOOTER -->
+
+<!-- ✅ FOOTER -->
 <footer class="site-footer">
   <div>
     <p>Salt Lake City Chamber</p>
