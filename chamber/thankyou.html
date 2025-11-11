@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Thank You | Salt Lake City Chamber</title>
 
-  <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <!-- ✅ Correct CSS paths -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- ✅ Your real header -->
 <header class="site-header">
   <div class="brand">
     <img class="brand-logo" src="images/SunriseCafe.png" alt="Salt Lake City Chamber logo" />
@@ -23,29 +23,34 @@
     <a href="directory.html">Directory</a>
     <a href="#">Events</a>
     <a href="#">Contact</a>
-    <a href="join.html" class="active">Join</a>
+    <a class="active" href="join.html">Join</a>
   </nav>
 </header>
 
-<main class="join-container">
-  <section class="join-form" style="max-width: 600px; margin: auto;">
+
+<main class="join-container" style="max-width: 800px;">
+
+  <section class="join-form">
     <h2>Thank You!</h2>
     <p>Your membership application has been received.</p>
 
     <h3>Submitted Information:</h3>
+
     <p><strong>First Name:</strong> <span id="fname"></span></p>
     <p><strong>Last Name:</strong> <span id="lname"></span></p>
     <p><strong>Email:</strong> <span id="email"></span></p>
-    <p><strong>Phone:</strong> <span id="phone"></span></p>
+    <p><strong>Mobile Phone:</strong> <span id="phone"></span></p>
     <p><strong>Organization:</strong> <span id="organization"></span></p>
-    <p><strong>Submission Date:</strong> <span id="timestamp"></span></p>
+    <p><strong>Timestamp:</strong> <span id="timestamp"></span></p>
 
-    <br>
     <a href="../index.html" class="submit-btn">Return to Home</a>
   </section>
+
 </main>
 
+
 <script>
+  /* ✅ Pull URL parameters */
   const params = new URLSearchParams(window.location.search);
   document.getElementById("fname").textContent = params.get("fname");
   document.getElementById("lname").textContent = params.get("lname");
@@ -55,7 +60,7 @@
   document.getElementById("timestamp").textContent = params.get("timestamp");
 </script>
 
-<!-- ✅ Your real footer -->
+
 <footer class="site-footer">
   <div>
     <p>Salt Lake City Chamber</p>
