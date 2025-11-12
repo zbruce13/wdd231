@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Plan – Ride Ready Moto</title>
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #1E3A8A; /* Navy Blue */
+      --accent-color: #E63946;  /* Red */
+      --light-gray: #f3f3f3;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0 auto;
+      padding: 2rem;
+      max-width: 900px;
+      background: var(--light-gray);
+      color: #222;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      font-family: 'Oswald', sans-serif;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      margin-top: 2rem;
+    }
+
+    header {
+      background: var(--primary-color);
+      padding: 1rem;
+      color: white;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .color-box {
+      width: 120px;
+      height: 60px;
+      border-radius: 6px;
+      margin-bottom: .5rem;
+    }
+    .primary { background: var(--primary-color); }
+    .accent { background: var(--accent-color); }
+
+    .wireframe {
+      border: 2px solid var(--accent-color);
+      padding: 1rem;
+      border-radius: 8px;
+      background: white;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Site Plan: Ride Ready Moto</h1>
+  </header>
+
+  <section>
+    <h2>Site Name</h2>
+    <p><strong>Ride Ready Moto</strong></p>
+    <p>
+      I selected this name because it communicates that the site prepares new riders
+      to be “ride ready” with basic motorcycle safety, learning tips, and confidence-building content.
+    </p>
+  </section>
+
+  <section>
+    <h2>Site Purpose</h2>
+    <p>
+      The purpose of this site is to help new motorcycle riders learn the basics of motorcycle safety,
+      gear selection, riding techniques, and simple maintenance. The site will include:
+    </p>
+    <ul>
+      <li>Home page: Introduction & hero section</li>
+      <li>Learning and Tips page: Safety gear, riding basics, and maintenance</li>
+      <li>Contact page: Form for questions or joining a mailing list</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Scenarios</h2>
+    <ul>
+      <li>“What gear do I need before riding a motorcycle for the first time?”</li>
+      <li>“How do I keep my motorcycle in safe condition with simple maintenance?”</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Color Schema</h2>
+
+    <p><strong>Primary Color (Nav, Headings, Buttons):</strong></p>
+    <div class="color-box primary"></div>
+    <p>#1E3A8A – Navy Blue</p>
+
+    <p><strong>Accent Color (Call-to-action, highlights):</strong></p>
+    <div class="color-box accent"></div>
+    <p>#E63946 – Red</p>
+
+    <p>Light gray is used for page background to improve readability.</p>
+  </section>
+
+  <section>
+    <h2>Typography</h2>
+    <ul>
+      <li><strong>Headings:</strong> Oswald (bold, used for page titles & section headers)</li>
+      <li><strong>Body Text:</strong> Roboto (easy-to-read paragraph font)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Wireframe — Home Page</h2>
+
+    <div class="wireframe">
+      <h3>Mobile View</h3>
+      <p>
+        ┌────────────────────────┐<br>
+        │ Hero Image             │<br>
+        ├────────────────────────┤<br>
+        │ Intro Text             │<br>
+        ├────────────────────────┤<br>
+        │ CTA Button             │<br>
+        └────────────────────────┘
+      </p>
+    </div>
+
+    <div class="wireframe">
+      <h3>Desktop View</h3>
+      <p>
+        ┌─────────────┬───────────────┐<br>
+        │ Hero Image  │ Intro Text     │<br>
+        │             │ CTA Button     │<br>
+        └─────────────┴───────────────┘
+      </p>
+    </div>
+  </section>
+
+</body>
+</html>
