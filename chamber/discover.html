@@ -1,35 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Discover Salt Lake City | Chamber of Commerce</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <script type="module" src="data/discover.mjs"></script>
-  <script src="scripts/discover.js" defer></script>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
-  <header>
-    <h1>Salt Lake City Chamber of Commerce</h1>
+  <header class="site-header">
+    <div class="brand">
+      <img src="images/templesquare.jpg" alt="Salt Lake City Chamber Logo" class="brand-logo">
+      <h1 class="brand-name">Salt Lake City Chamber of Commerce</h1>
+    </div>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="directory.html">Directory</a></li>
-        <li><a href="discover.html" class="active">Discover</a></li>
-        <li><a href="join.html">Join</a></li>
-        <li><a href="thankyou.html">Thank You</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="directory.html">Directory</a>
+      <a href="discover.html" class="active">Discover</a>
+      <a href="join.html">Join</a>
+      <a href="thankyou.html">Thank You</a>
     </nav>
   </header>
 
   <main>
-    <section id="visit-message" class="visit-banner"></section>
-    <h2>Discover Salt Lake City</h2>
+    <section class="visit-msg" id="visit-message"></section>
+    <h2 class="page-title">Discover Salt Lake City</h2>
     <div id="discover-container" class="discover-grid"></div>
   </main>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Salt Lake City Chamber of Commerce</p>
+  <footer class="site-footer">
+    <p>&copy; Salt Lake City Chamber of Commerce</p>
   </footer>
+
+  <!-- Load discover data and script as modules -->
+  <script type="module">
+    import { places } from './data/discover.mjs';
+
+    const container = document.querySelector("#discover-container");
+    const message = document.querySelector("#visit-message");
+
+    // Track visits
+    const lastVisit = localStorage.getItem("lastVisit");
+    if (lastVisit) {
+      const daysSince = Math.floor((Date.now() - parseInt(lastVisit, 10)) / (1000 * 60 * 60 * 24));
+      message.textContent =
+        daysSince === 0
+          ? "Welcome back! You visited today."
+          : `Back so soon! It’s been ${daysSince} day${daysSince > 1 ? "s" : ""}.`;
+    } else {
+      message.textContent = "Welcome! This is your first visit.";
+    }
+    localStorage.setItem("lastVisit", Date.now().toString());
+
+    // Create cards
+    places.forEach((place) => {
+      const card = document.createElement("div");
+      card.classList.add("discover-card");
+      card.innerHTML = `
+        <h3>${place.name}</h3>
+        <img src="${place.image}" alt="${place.name}">
+        <p><em>${place.address}</em></p>
+        <p>${place.description}</p>
+      `;
+      container.appendChild(card);
+    });
+  </script>
 </body>
 </html>
