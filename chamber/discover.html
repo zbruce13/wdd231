@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Discover Salt Lake City | Chamber of Commerce</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
   <header class="site-header">
     <div class="brand">
       <img src="images/templesquare.jpg" alt="Chamber logo" class="brand-logo">
-      <h1 class="brand-name">Salt Lake City Chamber of Commerce</h1>
+      <h1>Salt Lake City Chamber of Commerce</h1>
     </div>
     <nav>
       <a href="index.html">Home</a>
@@ -26,6 +26,7 @@
     <section id="visit-message" class="visit-msg"></section>
 
     <h2 class="page-title">Discover Salt Lake City</h2>
+
     <div id="discover-container" class="discover-grid"></div>
   </main>
 
@@ -33,37 +34,6 @@
     <p>&copy; Salt Lake City Chamber of Commerce</p>
   </footer>
 
-  <script type="module">
-    import { places } from '/wdd231/chamber/data/discover.mjs';
-
-    const container = document.querySelector("#discover-container");
-    const message = document.querySelector("#visit-message");
-
-    // --- Visit tracker ---
-    const lastVisit = localStorage.getItem("lastVisit");
-    if (lastVisit) {
-      const days = Math.floor((Date.now() - parseInt(lastVisit, 10)) / (1000 * 60 * 60 * 24));
-      message.textContent =
-        days === 0
-          ? "Welcome back! You visited today."
-          : `Back so soon! It’s been ${days} day${days > 1 ? "s" : ""} since your last visit.`;
-    } else {
-      message.textContent = "Welcome! This is your first visit to our site.";
-    }
-    localStorage.setItem("lastVisit", Date.now().toString());
-
-    // --- Generate cards ---
-    places.forEach(place => {
-      const card = document.createElement("div");
-      card.classList.add("discover-card");
-      card.innerHTML = `
-        <img src="${place.image}" alt="${place.name}">
-        <h3>${place.name}</h3>
-        <p><em>${place.address}</em></p>
-        <p>${place.description}</p>
-      `;
-      container.appendChild(card);
-    });
-  </script>
+  <script type="module" src="scripts/discover.js"></script>
 </body>
 </html>
