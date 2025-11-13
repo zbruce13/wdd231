@@ -10,7 +10,7 @@
 <body>
   <header class="site-header">
     <div class="brand">
-      <img src="images/templesquare.jpg" alt="Salt Lake City Chamber Logo" class="brand-logo">
+      <img src="images/templesquare.jpg" alt="Chamber logo" class="brand-logo">
       <h1 class="brand-name">Salt Lake City Chamber of Commerce</h1>
     </div>
     <nav>
@@ -23,7 +23,8 @@
   </header>
 
   <main>
-    <section class="visit-msg" id="visit-message"></section>
+    <section id="visit-message" class="visit-msg"></section>
+
     <h2 class="page-title">Discover Salt Lake City</h2>
     <div id="discover-container" class="discover-grid"></div>
   </main>
@@ -32,33 +33,32 @@
     <p>&copy; Salt Lake City Chamber of Commerce</p>
   </footer>
 
-  <!-- Load discover data and script as modules -->
   <script type="module">
-    import { places } from './data/discover.mjs';
+    import { places } from '/wdd231/chamber/data/discover.mjs';
 
     const container = document.querySelector("#discover-container");
     const message = document.querySelector("#visit-message");
 
-    // Track visits
+    // --- Visit tracker ---
     const lastVisit = localStorage.getItem("lastVisit");
     if (lastVisit) {
-      const daysSince = Math.floor((Date.now() - parseInt(lastVisit, 10)) / (1000 * 60 * 60 * 24));
+      const days = Math.floor((Date.now() - parseInt(lastVisit, 10)) / (1000 * 60 * 60 * 24));
       message.textContent =
-        daysSince === 0
+        days === 0
           ? "Welcome back! You visited today."
-          : `Back so soon! It’s been ${daysSince} day${daysSince > 1 ? "s" : ""}.`;
+          : `Back so soon! It’s been ${days} day${days > 1 ? "s" : ""} since your last visit.`;
     } else {
-      message.textContent = "Welcome! This is your first visit.";
+      message.textContent = "Welcome! This is your first visit to our site.";
     }
     localStorage.setItem("lastVisit", Date.now().toString());
 
-    // Create cards
-    places.forEach((place) => {
+    // --- Generate cards ---
+    places.forEach(place => {
       const card = document.createElement("div");
       card.classList.add("discover-card");
       card.innerHTML = `
-        <h3>${place.name}</h3>
         <img src="${place.image}" alt="${place.name}">
+        <h3>${place.name}</h3>
         <p><em>${place.address}</em></p>
         <p>${place.description}</p>
       `;
