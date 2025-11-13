@@ -1,41 +1,37 @@
-import { places } from "../data/discover.mjs";
+import { places } from "./data/discover.mjs";
 
-const grid = document.getElementById("discover-grid");
-const visitMsg = document.getElementById("visit-message");
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("discover-container");
 
-// Visitor message logic
-const lastVisit = localStorage.getItem("lastVisit");
-const now = Date.now();
+  // Display places
+  places.forEach(place => {
+    const card = document.createElement("div");
+    card.classList.add("discover-card");
 
-if (!lastVisit) {
-  visitMsg.textContent = "Welcome! Let us know if you have any questions.";
-} else {
-  const daysSince = Math.floor((now - lastVisit) / (1000 * 60 * 60 * 24));
-  if (daysSince < 1) {
-    visitMsg.textContent = "Back so soon! Awesome!";
-  } else if (daysSince === 1) {
-    visitMsg.textContent = "You last visited 1 day ago.";
+    card.innerHTML = `
+      <h3>${place.name}</h3>
+      <img src="${place.image}" alt="${place.name}" loading="lazy">
+      <p><em>${place.address}</em></p>
+      <p>${place.description}</p>
+      <a href="#" class="learn-more">Learn More</a>
+    `;
+
+    container.appendChild(card);
+  });
+
+  // Last Visit Message
+  const visitMessage = document.getElementById("visit-message");
+  const lastVisit = localStorage.getItem("lastVisit");
+
+  if (!lastVisit) {
+    visitMessage.textContent = "Welcome! This is your first visit.";
   } else {
-    visitMsg.textContent = `You last visited ${daysSince} days ago.`;
+    const daysPassed = Math.floor((Date.now() - lastVisit) / (1000 * 60 * 60 * 24));
+    if (daysPassed === 0) visitMessage.textContent = "Back so soon! Awesome!";
+    else if (daysPassed === 1) visitMessage.textContent = "You last visited 1 day ago.";
+    else visitMessage.textContent = `You last visited ${daysPassed} days ago.`;
   }
-}
 
-localStorage.setItem("lastVisit", now);
-
-// Build cards
-places.forEach(place => {
-  const card = document.createElement("div");
-  card.classList.add("discover-card");
-
-  card.innerHTML = `
-    <h3>${place.name}</h3>
-    <figure>
-      <img src="images/${place.image}" alt="${place.name}" loading="lazy">
-    </figure>
-    <address>${place.address}</address>
-    <p>${place.description}</p>
-    <button>Learn More</button>
-  `;
-
-  grid.appendChild(card);
+  localStorage.setItem("lastVisit", Date.now());
+  document.getElementById("year").textContent = new Date().getFullYear();
 });
