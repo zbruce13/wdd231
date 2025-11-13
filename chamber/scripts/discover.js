@@ -1,9 +1,9 @@
-import { places } from "./data/discover.mjs";
+import { places } from "../data/discover.mjs";
 
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("discover-container");
 
-  // Display places
+  // Display cards dynamically
   places.forEach(place => {
     const card = document.createElement("div");
     card.classList.add("discover-card");
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     container.appendChild(card);
   });
 
-  // Last Visit Message
+  // Visit Message Logic
   const visitMessage = document.getElementById("visit-message");
   const lastVisit = localStorage.getItem("lastVisit");
 
