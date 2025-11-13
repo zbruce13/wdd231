@@ -1,42 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover Salt Lake City through the Chamber of Commerce — explore local attractions, parks, and cultural sites.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover Salt Lake City through the Chamber of Commerce — explore local attractions, parks, and cultural sites." />
   <title>Discover | Salt Lake City Chamber of Commerce</title>
-  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- ✅ Correct CSS path -->
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
-  <header>
-    <h1>Salt Lake City Chamber of Commerce</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="directory.html">Directory</a></li>
-        <li><a href="discover.html" class="active">Discover</a></li>
-        <li><a href="join.html">Join</a></li>
-        <li><a href="thankyou.html">Thank You</a></li>
-      </ul>
+  <header class="site-header">
+    <div class="brand">
+      <img src="images/templesquare.jpg" alt="Chamber Logo" class="brand-logo" />
+      <span class="brand-name">Salt Lake City Chamber of Commerce</span>
+    </div>
+
+    <button id="menu" aria-label="Menu">☰</button>
+    <nav id="primary-nav">
+      <a href="index.html">Home</a>
+      <a href="directory.html">Directory</a>
+      <a href="discover.html" class="active">Discover</a>
+      <a href="join.html">Join</a>
+      <a href="thankyou.html">Thank You</a>
     </nav>
   </header>
 
   <main>
+    <!-- Visitor message -->
     <section id="visit-message"></section>
 
-    <h2>Discover Salt Lake City</h2>
-
-    <section id="discover-grid" class="discover-grid"></section>
+    <!-- Discover Section -->
+    <h2 style="text-align:center;">Discover Salt Lake City</h2>
+    <section id="discover-grid"></section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <p>&copy; <span id="year"></span> Salt Lake City Chamber of Commerce</p>
   </footer>
 
+  <!-- ✅ Correct JS path -->
   <script type="module" src="scripts/discover.js"></script>
   <script>
-    // Footer year
+    // Update footer year
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
