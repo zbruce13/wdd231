@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discover Salt Lake City | Chamber of Commerce</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discover | Salt Lake City Chamber of Commerce</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-
 <body>
-  <header class="site-header">
-    <div class="brand">
+  <header>
+    <div class="header-container">
       <img src="images/templesquare.jpg" alt="Chamber logo" class="brand-logo">
       <h1>Salt Lake City Chamber of Commerce</h1>
     </div>
+
     <nav>
-      <a href="index.html">Home</a>
-      <a href="directory.html">Directory</a>
-      <a href="discover.html" class="active">Discover</a>
-      <a href="join.html">Join</a>
-      <a href="thankyou.html">Thank You</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="discover.html" class="active">Discover</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="thankyou.html">Thank You</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
-    <section id="visit-message" class="visit-msg"></section>
+    <section class="visit-banner" id="visit-msg">Loading...</section>
 
     <h2 class="page-title">Discover Salt Lake City</h2>
-
     <div id="discover-container" class="discover-grid"></div>
   </main>
 
-  <footer class="site-footer">
-    <p>&copy; Salt Lake City Chamber of Commerce</p>
+  <footer>
+    <p>&copy; <span id="year"></span> Salt Lake City Chamber of Commerce</p>
   </footer>
 
   <script type="module" src="scripts/discover.js"></script>
