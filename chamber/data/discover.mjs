@@ -1,50 +1,50 @@
 export const places = [
   {
     name: "Temple Square",
+    image: "images/templesquare.jpg",
     address: "50 N Temple, Salt Lake City, UT 84150",
-    description: "Salt Lake City's most iconic landmark featuring historic architecture, gardens, and tours.",
-    image: "templesquare.jpg"
+    description: "Salt Lake City's most iconic landmark featuring historic architecture, gardens, and tours."
   },
   {
     name: "Utah State Capitol",
+    image: "images/Utahcapitol.jpg",
     address: "350 State St, Salt Lake City, UT 84103",
-    description: "A neoclassical landmark overlooking the city with exhibits on Utah's government and history.",
-    image: "utahcapitol.jpg"
+    description: "A neoclassical landmark overlooking the city with exhibits on Utah's government and history."
   },
   {
     name: "Hogle Zoo",
+    image: "images/hoglezoo.JPG",
     address: "2600 Sunnyside Ave S, Salt Lake City, UT 84108",
-    description: "Home to hundreds of animals and engaging family exhibits set against the Wasatch Mountains.",
-    image: "hoglezoo.jpg"
+    description: "Home to hundreds of animals and engaging family exhibits set against the scenic backdrop of the Wasatch Mountains."
   },
   {
     name: "Red Butte Garden",
+    image: "images/redbuttegarden.JPG",
     address: "300 Wakara Way, Salt Lake City, UT 84108",
-    description: "A stunning botanical garden offering trails, concerts, and scenic mountain views.",
-    image: "redbuttegarden.jpg"
+    description: "A stunning botanical garden offering trails, concerts, and scenic mountain views."
   },
   {
     name: "Great Salt Lake",
+    image: "images/greatsaltlake.jpg",
     address: "Great Salt Lake State Park, Magna, UT 84044",
-    description: "One of the largest saltwater lakes in the Western Hemisphere—ideal for birdwatching and sunsets.",
-    image: "greatsaltlake.jpg"
+    description: "One of the largest saltwater lakes in the Western Hemisphere—ideal for birdwatching and sunset views."
   },
   {
     name: "Liberty Park",
+    image: "images/libertypark.jpeg",
     address: "600 E 900 S, Salt Lake City, UT 84105",
-    description: "A central urban park with a lake, jogging trails, and the popular Tracy Aviary bird sanctuary.",
-    image: "libertypark.jpeg"
+    description: "A central urban park with a lake, jogging trails, playgrounds, and the popular Tracy Aviary bird sanctuary."
   },
   {
     name: "Natural History Museum of Utah",
+    image: "images/naturalhistory.jpg",
     address: "301 Wakara Way, Salt Lake City, UT 84108",
-    description: "Explore local culture, fossils, and fascinating natural exhibits.",
-    image: "naturalhistory.jpg"
+    description: "A world-class museum showcasing Utah's science, nature, and ancient history."
   },
   {
     name: "The Leonardo Museum",
+    image: "images/leonardo.jpg",
     address: "209 E 500 S, Salt Lake City, UT 84111",
-    description: "An interactive museum blending art, science, and technology in engaging exhibits.",
-    image: "leonardo.jpg"
+    description: "A museum combining art, science, and technology in interactive exhibits."
   }
 ];
