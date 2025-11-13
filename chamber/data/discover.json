@@ -22,5 +22,29 @@
     "image": "images/redbuttegarden.jpg",
     "address": "300 Wakara Way, Salt Lake City, UT 84108",
     "description": "A stunning botanical garden offering trails, concerts, and scenic mountain views."
+  },
+  {
+    "name": "The Great Salt Lake",
+    "image": "images/greatsaltlake.jpg",
+    "address": "Great Salt Lake State Park, Magna, UT 84044",
+    "description": "One of the largest saltwater lakes in the Western Hemisphere, offering scenic views, birdwatching, and sunsets like nowhere else."
+  },
+  {
+    "name": "Liberty Park",
+    "image": "images/libertypark.jpeg",
+    "address": "600 E 900 S, Salt Lake City, UT 84105",
+    "description": "A historic urban park with walking paths, ponds, picnic areas, and the Tracy Aviary — perfect for a family day out."
+  },
+  {
+    "name": "Natural History Museum of Utah",
+    "image": "images/naturalhistory.jpg",
+    "address": "301 Wakara Way, Salt Lake City, UT 84108",
+    "description": "A fascinating museum showcasing Utah's natural wonders, from dinosaurs and geology to indigenous history."
+  },
+  {
+    "name": "The Leonardo Museum",
+    "image": "images/leonardo.jpg",
+    "address": "209 E 500 S, Salt Lake City, UT 84111",
+    "description": "A museum that blends science, technology, and art, inspiring curiosity and creativity in visitors of all ages."
   }
 ]
