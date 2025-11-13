@@ -20,16 +20,37 @@ h1, h2, h3 {
 
 /* ========== HEADER ========== */
 header {
-  text-align: center;
-  background: white;
-  padding: 1rem;
+  background: #f1f6ff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 1rem;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.header-container h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+.brand-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
 }
 
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 0.5rem 0 0;
+  margin: 1rem 0 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -63,6 +84,11 @@ main {
 }
 
 /* ========== DISCOVER GRID ========== */
+.page-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
 .discover-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -109,10 +135,4 @@ footer {
   padding: 1rem;
   background: #f0f0f0;
   margin-top: 2rem;
-}
-.brand-logo {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 8px;
 }
