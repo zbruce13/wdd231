@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Discover the attractions, landmarks, and highlights of Salt Lake City Chamber of Commerce." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover Salt Lake City through the Chamber of Commerce — explore local attractions, parks, and cultural sites.">
   <title>Discover | Salt Lake City Chamber of Commerce</title>
-
-  <!-- Link to your CSS -->
-  <link rel="stylesheet" href="css/styles.css" />
-
-  <!-- JavaScript module -->
-  <script type="module" src="scripts/discover.js" defer></script>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -27,21 +22,21 @@
     </nav>
   </header>
 
-  <main id="discover">
+  <main>
     <section id="visit-message"></section>
 
     <h2>Discover Salt Lake City</h2>
 
-    <div id="discover-grid" class="discover-grid">
-      <!-- Cards will load here from discover.js -->
-    </div>
+    <section id="discover-grid" class="discover-grid"></section>
   </main>
 
   <footer>
     <p>&copy; <span id="year"></span> Salt Lake City Chamber of Commerce</p>
   </footer>
 
+  <script type="module" src="scripts/discover.js"></script>
   <script>
+    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
