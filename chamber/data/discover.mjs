@@ -15,13 +15,13 @@ export const places = [
     name: "Hogle Zoo",
     image: "images/hoglezoo.jpg",
     address: "2600 Sunnyside Ave S, Salt Lake City, UT 84108",
-    description: "Home to hundreds of animals and family exhibits set against the scenic Wasatch Mountains."
+    description: "Home to hundreds of animals and engaging family exhibits set against the scenic Wasatch Mountains."
   },
   {
     name: "Red Butte Garden",
     image: "images/redbuttegarden.jpg",
     address: "300 Wakara Way, Salt Lake City, UT 84108",
-    description: "A stunning botanical garden offering trails, concerts, and mountain views."
+    description: "A stunning botanical garden offering trails, concerts, and scenic mountain views."
   },
   {
     name: "Great Salt Lake",
