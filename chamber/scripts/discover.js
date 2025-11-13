@@ -1,13 +1,17 @@
 // scripts/discover.js
 
-// ✅ Load the JSON data directly
-fetch("../data/discover.json")
-  .then((response) => response.json())
+// ✅ Load the JSON data (corrected path)
+fetch("./data/discover.json")
+  .then((response) => {
+    if (!response.ok) throw new Error("Network response was not ok");
+    return response.json();
+  })
   .then((placesData) => {
     displayPlaces(placesData);
   })
   .catch((error) => {
     console.error("Error loading discover.json:", error);
+    document.getElementById("visit-msg").textContent = "Error loading data.";
   });
 
 const visitMsg = document.getElementById("visit-msg");
