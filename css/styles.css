@@ -1,0 +1,369 @@
+/* ------------------------------
+   BASE / RESET
+------------------------------ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ------------------------------
+   HEADER / NAVIGATION
+------------------------------ */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0a4d68;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/* ✅ FIX: logo too large */
+.brand-logo {
+    max-width: 120px; /* adjust size here */
+    height: auto;
+}
+
+.brand-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* Mobile menu button */
+#menu {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Navigation links */
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: #1282a2;
+}
+
+/* Responsive nav menu toggle (mobile) */
+@media (max-width: 780px) {
+    #menu {
+        display: block;
+    }
+    nav {
+        display: none;
+        flex-direction: column;
+        background-color: #0a4d68;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        padding: 1rem;
+        width: 200px;
+    }
+    nav.show {
+        display: flex;
+    }
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+.site-footer {
+    background-color: #0a4d68;
+    color: white;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.site-footer a {
+    color: white;
+}
+
+.site-footer p {
+    margin: 0.25rem 0;
+}
+
+@media (max-width: 800px) {
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* ------------------------------
+   JOIN FORM PAGE
+------------------------------ */
+.join-container {
+    display: grid;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.join-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.join-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.join-form input,
+.join-form select,
+.join-form textarea {
+    padding: 0.7rem;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+}
+
+.submit-btn {
+    background-color: #0084A8;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: #009fcc;
+}
+
+/* RESPONSIVE: 2-column layout on desktop */
+@media (min-width: 900px) {
+    .join-container {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+}
+
+/* ------------------------------
+   MEMBERSHIP CARDS
+------------------------------ */
+.membership-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.card {
+    background: white;
+    padding: 1.4rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.card button {
+    margin-top: 0.6rem;
+    padding: 0.45rem 1.25rem;
+    border: none;
+    background-color: #0a9396;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #2ac6ca;
+}
+
+/* ------------------------------
+   CARD ANIMATION (on page load)
+------------------------------ */
+.fade-in {
+    opacity: 0;
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ------------------------------
+   MODALS
+------------------------------ */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 9999;
+}
+
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    width: 90%;
+    max-width: 420px;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+/* ===============================
+   DISCOVER PAGE STYLES
+   =============================== */
+
+/* Message box */
+#visit-message {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #f0f8ff;
+  color: #333;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem auto;
+  max-width: 600px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid container */
+.discover-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+/* Individual card */
+.discover-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discover-card h3 {
+  background-color: #1a4d7a;
+  color: #fff;
+  margin: 0;
+  padding: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.discover-card figure {
+  margin: 0;
+}
+
+.discover-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.discover-card address {
+  font-style: normal;
+  color: #444;
+  margin: 0.75rem;
+}
+
+.discover-card p {
+  margin: 0.75rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.discover-card button {
+  display: inline-block;
+  margin: 0.75rem;
+  padding: 0.5rem 1rem;
+  background-color: #1a4d7a;
+  color: #fff;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.discover-card button:hover {
+  background-color: #2168a4;
+}
+
+/* Hover effect (desktop only) */
+@media (min-width: 1025px) {
+  .discover-card img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.15);
+  }
+
+  .discover-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Medium screen layout (tablets) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .discover-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large screen layout (desktop) */
+@media (min-width: 1025px) {
+  .discover-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/* Make Discover Page Images Uniform */
+.discover-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ccc;
+}
