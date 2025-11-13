@@ -15,13 +15,13 @@ export const places = [
     name: "Hogle Zoo",
     image: "images/hoglezoo.jpg",
     address: "2600 Sunnyside Ave S, Salt Lake City, UT 84108",
-    description: "Home to hundreds of animals and engaging family exhibits set against the scenic backdrop of the Wasatch Mountains."
+    description: "Home to hundreds of animals and family exhibits set against the scenic Wasatch Mountains."
   },
   {
     name: "Red Butte Garden",
     image: "images/redbuttegarden.jpg",
     address: "300 Wakara Way, Salt Lake City, UT 84108",
-    description: "A stunning botanical garden offering trails, concerts, and scenic mountain views."
+    description: "A stunning botanical garden offering trails, concerts, and mountain views."
   },
   {
     name: "Great Salt Lake",
@@ -33,7 +33,7 @@ export const places = [
     name: "Liberty Park",
     image: "images/libertypark.jpeg",
     address: "600 E 900 S, Salt Lake City, UT 84105",
-    description: "A central urban park with a lake, jogging trails, playgrounds, and the popular Tracy Aviary bird sanctuary."
+    description: "A central urban park with a lake, jogging trails, playgrounds, and the popular Tracy Aviary."
   },
   {
     name: "Natural History Museum of Utah",
