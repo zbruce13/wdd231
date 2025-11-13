@@ -7,19 +7,19 @@ export const places = [
   },
   {
     name: "Utah State Capitol",
-    image: "images/Utahcapitol.jpg",
+    image: "images/utahcapitol.jpg",
     address: "350 State St, Salt Lake City, UT 84103",
     description: "A neoclassical landmark overlooking the city with exhibits on Utah's government and history."
   },
   {
     name: "Hogle Zoo",
-    image: "images/hoglezoo.JPG",
+    image: "images/hoglezoo.jpg",
     address: "2600 Sunnyside Ave S, Salt Lake City, UT 84108",
     description: "Home to hundreds of animals and engaging family exhibits set against the scenic backdrop of the Wasatch Mountains."
   },
   {
     name: "Red Butte Garden",
-    image: "images/redbuttegarden.JPG",
+    image: "images/redbuttegarden.jpg",
     address: "300 Wakara Way, Salt Lake City, UT 84108",
     description: "A stunning botanical garden offering trails, concerts, and scenic mountain views."
   },
