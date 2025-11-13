@@ -1,305 +1,112 @@
-/* =========================================
-   ROOT VARIABLES
-========================================= */
+/* ========== GENERAL ========== */
 :root {
-  --bg: #ffffff;
-  --ink: #1f2328;
-  --muted: #5b6570;
-  --brand: #0a66c2;
-  --card: #f6f8fa;
+  --primary: #0057b8;
+  --text: #222;
+  --bg: #f9fafb;
   --radius: 12px;
-  --maxw: 1100px;
-  --gap: 1rem;
 }
 
 body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: var(--ink);
+  font-family: "Segoe UI", Arial, sans-serif;
   background: var(--bg);
-  line-height: 1.5;
+  color: var(--text);
   margin: 0;
+  padding: 0;
 }
 
-/* =========================================
-   HEADER & NAVIGATION
-========================================= */
-.site-header {
-  max-width: var(--maxw);
-  margin: 0 auto;
+h1, h2, h3 {
+  color: var(--primary);
+}
+
+/* ========== HEADER ========== */
+header {
+  text-align: center;
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
-  padding: 0.8rem 1rem;
-  border-bottom: 1px solid #e6e8eb;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.brand-logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-}
-
-.brand-name {
-  font-weight: 700;
-}
-
-#menu {
-  border: 1px solid #d0d7de;
-  background: var(--bg);
-  padding: 0.35rem 0.6rem;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-#primary-nav {
-  display: none;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-#primary-nav a {
+nav a {
+  color: var(--primary);
   text-decoration: none;
-  color: var(--brand);
+  font-weight: 600;
 }
 
-#primary-nav a.active {
-  font-weight: 700;
+nav a.active {
   text-decoration: underline;
 }
 
-#primary-nav.open {
-  display: flex;
-}
-
-@media (min-width: 48rem) {
-  #menu {
-    display: none;
-  }
-  #primary-nav {
-    display: flex;
-    flex-direction: row;
-  }
-}
-
-/* =========================================
-   FOOTER
-========================================= */
-.site-footer {
-  max-width: var(--maxw);
-  margin: 1.5rem auto 2rem;
-  padding: 1rem;
-  border-top: 1px solid #e6e8eb;
-  display: grid;
-  gap: 0.5rem;
-}
-
-.site-footer a {
-  color: var(--brand);
-  text-decoration: none;
-}
-
-/* =========================================
-   HOME PAGE: HERO SECTION
-========================================= */
-.hero {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.cta-btn {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #0a9396;
-  color: white;
-  font-weight: bold;
-  padding: 1rem 1.6rem;
-  font-size: 1.3rem;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.cta-btn:hover {
-  background: #13b8bd;
-}
-
-/* =========================================
-   HOME PAGE: GRID LAYOUT
-========================================= */
-.home-layout {
+/* ========== MAIN CONTENT ========== */
+main {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  margin: 2rem auto;
+  padding: 1rem;
 }
 
-.content-sections {
-  display: grid;
-  gap: 2rem;
+.visit-banner {
+  background: #e6f1ff;
+  border-left: 5px solid var(--primary);
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 500;
 }
 
-.card {
-  background: white;
-  padding: 1.4rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-
-@media (min-width: 900px) {
-  .content-sections {
-    grid-template-columns: 1fr 1fr;
-  }
-  .spotlights {
-    grid-column: span 2;
-  }
-}
-
-/* =========================================
-   SPOTLIGHT CARDS
-========================================= */
-#spotlight-container {
+/* ========== DISCOVER GRID ========== */
+.discover-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.4rem;
-}
-
-.spotlight-card {
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-}
-
-.spotlight-card img {
-  width: 120px;
-  margin-bottom: 0.6rem;
-}
-
-/* =========================================
-   DISCOVER PAGE STYLES
-========================================= */
-#discover-grid {
-  display: grid;
-  grid-template-columns: 1fr;
   gap: 1.5rem;
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-@media (min-width: 640px) {
-  #discover-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1025px) {
-  #discover-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 .discover-card {
-  background-color: var(--card);
+  background: white;
   border-radius: var(--radius);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.discover-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  justify-content: space-between;
 }
 
 .discover-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  display: block;
+  border-radius: var(--radius);
 }
 
-.discover-card h3 {
-  background-color: var(--brand);
-  color: white;
-  padding: 0.75rem;
-  margin: 0;
-  font-size: 1.1rem;
-  border-top-left-radius: var(--radius);
-  border-top-right-radius: var(--radius);
-}
-
-.discover-card address {
-  font-style: italic;
-  color: var(--muted);
-  padding: 0 1rem;
+.learn-more {
+  display: inline-block;
   margin-top: 0.5rem;
-}
-
-.discover-card p {
-  padding: 0 1rem;
-  color: var(--ink);
-  flex-grow: 1;
-}
-
-.discover-card button {
-  margin: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: var(--brand);
+  background: var(--primary);
   color: white;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
-
-.discover-card button:hover {
-  background-color: #084a8b;
-}
-
-#visit-message {
-  background-color: #eaf3ff;
-  border: 1px solid #bcd3f5;
-  border-radius: 0.5rem;
-  text-align: center;
-  padding: 0.75rem;
-  margin: 1rem auto;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  text-decoration: none;
   font-weight: 600;
-  color: var(--brand);
-  max-width: 600px;
+  transition: 0.2s;
 }
 
-/* =========================================
-   MOBILE
-========================================= */
-@media (max-width: 800px) {
-  .hero {
-    height: 200px;
-  }
-  .cta-btn {
-    font-size: 1rem;
-    padding: 0.7rem 1rem;
-  }
+.learn-more:hover {
+  background: #003d82;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #f0f0f0;
+  margin-top: 2rem;
 }
