@@ -1,52 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="author" content="Zach Bruce" />
-  <meta name="description" content="Motorcycle safety and maintenance tips for new riders." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RideSmart - Learning & Tips</title>
-  <link rel="icon" href="images/favicon.png" />
-  <link rel="stylesheet" href="styles/styles.css" />
-  <script type="module" src="scripts/learning.js" defer></script>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
-
 <body>
   <header>
-    <nav class="navbar">
-      <a href="index.html" class="logo">RideSmart</a>
-      <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
-      <ul id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="learning.html" class="active">Learning & Tips</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <h1>RideSmart</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="learning.html" class="active">Learning & Tips</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
-    <section class="page-header">
+    <section class="learning-section">
       <h1>Motorcycle Learning & Tips</h1>
       <p>Discover essential safety and maintenance tips to help you ride smart and safe.</p>
+      <div id="tips-container" class="tips-container"></div>
     </section>
-
-    <section class="tips-container" id="tips-container">
-      <!-- Dynamic cards will load here -->
-    </section>
-
-    <!-- Modal -->
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span id="close-modal">&times;</span>
-        <h2 id="modal-title"></h2>
-        <img id="modal-image" src="" alt="">
-        <p id="modal-description"></p>
-      </div>
-    </div>
   </main>
 
   <footer>
     <p>&copy; 2025 RideSmart | <a href="attributions.html">Attributions</a></p>
   </footer>
+
+  <!-- Scripts -->
+  <script src="scripts/learning.js"></script>
 </body>
 </html>
