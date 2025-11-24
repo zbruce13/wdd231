@@ -3,90 +3,90 @@
     "title": "Always Wear a Helmet",
     "category": "Safety",
     "description": "Your helmet is your best protection. Choose one that fits snugly and meets safety standards.",
-    "image": "images/helmet.jpg"
+    "image": "helmet.jpg"
   },
   {
     "title": "Inspect Tires Regularly",
     "category": "Maintenance",
     "description": "Check tire pressure and tread before each ride to prevent accidents and extend tire life.",
-    "image": "images/tires.jpg"
+    "image": "tires.jpg"
   },
   {
     "title": "Use Both Brakes",
     "category": "Riding",
     "description": "Balance your braking with both front and rear brakes to stay in control.",
-    "image": "images/brakes.jpg"
+    "image": "brakes.jpg"
   },
   {
     "title": "Check Oil Levels",
     "category": "Maintenance",
     "description": "Engine oil keeps your bike running smoothly—check it before long rides.",
-    "image": "images/oil.jpg"
+    "image": "oil.jpg"
   },
   {
     "title": "Wear Protective Gear",
     "category": "Safety",
     "description": "Gloves, jacket, and boots protect you from wind, debris, and injury.",
-    "image": "images/gear.jpg"
+    "image": "gear.jpg"
   },
   {
     "title": "Ride Defensively",
     "category": "Riding",
     "description": "Assume other drivers can’t see you—stay alert and visible.",
-    "image": "images/defensive.jpg"
+    "image": "defensive.jpg"
   },
   {
     "title": "Practice Slow Riding",
     "category": "Riding",
     "description": "Balance and clutch control are key. Practice in empty parking lots.",
-    "image": "images/slowride.jpg"
+    "image": "slowride.jpg"
   },
   {
     "title": "Avoid Riding in Bad Weather",
     "category": "Safety",
     "description": "Rain reduces traction and visibility. Ride cautiously or wait for better conditions.",
-    "image": "images/rain.jpg"
+    "image": "rain.jpg"
   },
   {
     "title": "Check Chain Tension",
     "category": "Maintenance",
     "description": "A loose or tight chain affects performance. Check tension regularly.",
-    "image": "images/chain.jpg"
+    "image": "chain.jpg"
   },
   {
     "title": "Keep a Tool Kit",
     "category": "Preparation",
     "description": "Carry a small tool kit for quick fixes while traveling.",
-    "image": "images/tools.jpg"
+    "image": "tools.jpg"
   },
   {
     "title": "Stay Hydrated",
     "category": "Health",
     "description": "Long rides can dehydrate you—drink water regularly.",
-    "image": "images/water.jpg"
+    "image": "water.jpg"
   },
   {
     "title": "Plan Your Route",
     "category": "Preparation",
     "description": "Know where gas stations and rest stops are along your route.",
-    "image": "images/map.jpg"
+    "image": "map.jpg"
   },
   {
     "title": "Maintain Good Posture",
     "category": "Riding",
     "description": "Relax your shoulders, keep elbows bent, and grip the tank with your knees.",
-    "image": "images/posture.jpg"
+    "image": "posture.jpg"
   },
   {
     "title": "Avoid Distractions",
     "category": "Safety",
     "description": "Keep your focus on the road—don’t use your phone or earbuds.",
-    "image": "images/focus.jpg"
+    "image": "focus.jpg"
   },
   {
     "title": "Regularly Service Your Bike",
     "category": "Maintenance",
     "description": "Follow your manufacturer’s maintenance schedule for safety and performance.",
-    "image": "images/service.jpg"
+    "image": "service.jpg"
   }
 ]
