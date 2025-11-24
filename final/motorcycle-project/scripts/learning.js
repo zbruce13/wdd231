@@ -1,38 +1,33 @@
-async function loadTips() {
-  try {
-    const response = await fetch("./data/tips.json");
-    if (!response.ok) {
-      throw new Error("Failed to load tips data");
-    }
-    const tips = await response.json();
-    displayTips(tips);
-  } catch (error) {
-    console.error("Error loading tips:", error);
-  }
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const tipsContainer = document.getElementById("tips-container");
 
-function displayTips(tips) {
-  const container = document.getElementById("tips-container");
-  container.innerHTML = "";
-
-  tips.forEach(tip => {
-    const card = document.createElement("div");
-    card.classList.add("tip-card");
-    card.innerHTML = `
-      <img src="images/${tip.image}" alt="${tip.title}">
-      <h3>${tip.title}</h3>
-      <p>${tip.category}</p>
-      <button class="read-more">Read More</button>
-    `;
-    container.appendChild(card);
-
-    // Only open modal when "Read More" is clicked
-    const button = card.querySelector(".read-more");
-    button.addEventListener("click", () => showModal(tip));
-  });
-}
+  fetch("data/tips.json")
+    .then((response) => response.json())
+    .then((tips) => {
+      tips.forEach((tip) => {
+        const card = document.createElement("div");
+        card.classList.add("tip-card");
+        card.innerHTML = `
+          <img src="images/${tip.image}" alt="${tip.title}">
+          <h3>${tip.title}</h3>
+          <p>${tip.category}</p>
+          <button class="read-more">Read More</button>
+        `;
+        card.querySelector(".read-more").addEventListener("click", () => {
+          showModal(tip);
+        });
+        tipsContainer.appendChild(card);
+      });
+    })
+    .catch((error) => console.error("Error loading tips:", error));
+});
 
 function showModal(tip) {
+  // Remove any existing modal before creating a new one
+  const existingModal = document.querySelector(".modal");
+  if (existingModal) existingModal.remove();
+
+  // Create modal structure
   const modal = document.createElement("div");
   modal.classList.add("modal");
   modal.innerHTML = `
@@ -46,14 +41,9 @@ function showModal(tip) {
   `;
   document.body.appendChild(modal);
 
-  // Close when clicking the X
+  // Add close functionality
   modal.querySelector(".close").addEventListener("click", () => modal.remove());
-
-  // Close when clicking outside the modal box
-  modal.addEventListener("click", e => {
+  modal.addEventListener("click", (e) => {
     if (e.target === modal) modal.remove();
   });
 }
-
-// Run everything after DOM is ready
-document.addEventListener("DOMContentLoaded", loadTips);
