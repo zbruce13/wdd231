@@ -4,8 +4,146 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RideSmart - Learning & Tips</title>
-  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/styles.css">
   <link rel="icon" type="image/png" href="images/favicon.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f7f7f7;
+    }
+
+    header {
+      background-color: orange;
+      color: black;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    nav a.active {
+      text-decoration: underline;
+    }
+
+    .learning-section {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .tips-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .tip-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .tip-card:hover {
+      transform: scale(1.02);
+    }
+
+    .tip-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .tip-card h3 {
+      margin: 0.5rem 0;
+    }
+
+    .tip-card p {
+      color: #555;
+    }
+
+    .tip-card button {
+      background-color: orange;
+      border: none;
+      color: black;
+      font-weight: bold;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      cursor: pointer;
+    }
+
+    .tip-card button:hover {
+      background-color: #ffb84d;
+    }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #222;
+      color: white;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -19,17 +157,16 @@
 
   <main>
     <section class="learning-section">
-      <h1>Motorcycle Learning & Tips</h1>
+      <h2>Motorcycle Learning & Tips</h2>
       <p>Discover essential safety and maintenance tips to help you ride smart and safe.</p>
       <div id="tips-container" class="tips-container"></div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 RideSmart | <a href="attributions.html">Attributions</a></p>
+    <p>&copy; 2025 RideSmart | <a href="attributions.html" style="color:orange;">Attributions</a></p>
   </footer>
 
-  <!-- Scripts -->
   <script src="scripts/learning.js"></script>
 </body>
 </html>
