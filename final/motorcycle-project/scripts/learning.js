@@ -1,65 +1,58 @@
-// learning.js
-document.addEventListener("DOMContentLoaded", () => {
-  const tipsContainer = document.getElementById("tips-container");
-
-  async function loadTips() {
-    try {
-      // ✅ Works on both local and GitHub Pages
-      const response = await fetch("./data/tips.json");
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      const tips = await response.json();
-
-      // Clear container
-      tipsContainer.innerHTML = "";
-
-      // Create cards for each tip
-      tips.forEach((tip) => {
-        const card = document.createElement("div");
-        card.classList.add("tip-card");
-        card.innerHTML = `
-          <img src="${tip.image}" alt="${tip.title}">
-          <h3>${tip.title}</h3>
-          <p>${tip.category}</p>
-          <button class="read-more">Read More</button>
-        `;
-        tipsContainer.appendChild(card);
-
-        // Modal functionality
-        const button = card.querySelector(".read-more");
-        button.addEventListener("click", () => showModal(tip));
-      });
-    } catch (error) {
-      console.error("Error loading tips:", error);
-      tipsContainer.innerHTML =
-        "<p>Sorry, we couldn’t load the motorcycle tips right now.</p>";
+async function loadTips() {
+  try {
+    const response = await fetch("./data/tips.json");
+    if (!response.ok) {
+      throw new Error("Failed to load tips data");
     }
+    const tips = await response.json();
+    displayTips(tips);
+  } catch (error) {
+    console.error("Error loading tips:", error);
   }
+}
 
-  // Create a modal
-  function showModal(tip) {
-    const modal = document.createElement("div");
-    modal.classList.add("modal");
-    modal.innerHTML = `
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>${tip.title}</h2>
-        <img src="${tip.image}" alt="${tip.title}">
-        <p><strong>Category:</strong> ${tip.category}</p>
-        <p>${tip.description}</p>
-      </div>
+function displayTips(tips) {
+  const container = document.getElementById("tips-container");
+  container.innerHTML = "";
+
+  tips.forEach(tip => {
+    const card = document.createElement("div");
+    card.classList.add("tip-card");
+    card.innerHTML = `
+      <img src="images/${tip.image}" alt="${tip.title}">
+      <h3>${tip.title}</h3>
+      <p>${tip.category}</p>
+      <button class="read-more">Read More</button>
     `;
-    document.body.appendChild(modal);
+    container.appendChild(card);
 
-    const closeBtn = modal.querySelector(".close");
-    closeBtn.addEventListener("click", () => modal.remove());
+    // Attach modal event
+    card.querySelector(".read-more").addEventListener("click", () => showModal(tip));
+  });
+}
 
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) modal.remove();
-    });
-  }
+function showModal(tip) {
+  const modal = document.createElement("div");
+  modal.classList.add("modal");
+  modal.innerHTML = `
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img src="images/${tip.image}" alt="${tip.title}">
+      <h2>${tip.title}</h2>
+      <p><strong>Category:</strong> ${tip.category}</p>
+      <p>${tip.description}</p>
+    </div>
+  `;
+  document.body.appendChild(modal);
 
-  loadTips();
-});
+  // Close on X
+  modal.querySelector(".close").addEventListener("click", () => modal.remove());
+
+  // Close when clicking outside modal
+  modal.addEventListener("click", e => {
+    if (e.target === modal) modal.remove();
+  });
+}
+
+// Run on page load
+document.addEventListener("DOMContentLoaded", loadTips);
