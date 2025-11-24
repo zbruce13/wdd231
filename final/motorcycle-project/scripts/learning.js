@@ -1,10 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   const tipsContainer = document.getElementById("tips-container");
 
+  // Load data from JSON file
   fetch("data/tips.json")
-    .then((response) => response.json())
-    .then((tips) => {
-      tips.forEach((tip) => {
+    .then(response => {
+      if (!response.ok) throw new Error("Failed to load JSON");
+      return response.json();
+    })
+    .then(tips => {
+      tipsContainer.innerHTML = "";
+
+      tips.forEach(tip => {
         const card = document.createElement("div");
         card.classList.add("tip-card");
         card.innerHTML = `
@@ -13,21 +19,24 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>${tip.category}</p>
           <button class="read-more">Read More</button>
         `;
-        card.querySelector(".read-more").addEventListener("click", () => {
-          showModal(tip);
-        });
         tipsContainer.appendChild(card);
+
+        const button = card.querySelector(".read-more");
+        button.addEventListener("click", () => showModal(tip));
       });
     })
-    .catch((error) => console.error("Error loading tips:", error));
+    .catch(error => {
+      tipsContainer.innerHTML = "<p>Sorry, tips could not be loaded.</p>";
+      console.error(error);
+    });
 });
 
 function showModal(tip) {
-  // Remove any existing modal before creating a new one
-  const existingModal = document.querySelector(".modal");
-  if (existingModal) existingModal.remove();
+  // Remove any existing modal
+  const existing = document.querySelector(".modal");
+  if (existing) existing.remove();
 
-  // Create modal structure
+  // Create modal
   const modal = document.createElement("div");
   modal.classList.add("modal");
   modal.innerHTML = `
@@ -41,9 +50,9 @@ function showModal(tip) {
   `;
   document.body.appendChild(modal);
 
-  // Add close functionality
+  // Close events
   modal.querySelector(".close").addEventListener("click", () => modal.remove());
-  modal.addEventListener("click", (e) => {
+  modal.addEventListener("click", e => {
     if (e.target === modal) modal.remove();
   });
 }
