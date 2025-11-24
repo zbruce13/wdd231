@@ -26,8 +26,9 @@ function displayTips(tips) {
     `;
     container.appendChild(card);
 
-    // Attach modal event
-    card.querySelector(".read-more").addEventListener("click", () => showModal(tip));
+    // Only open modal when "Read More" is clicked
+    const button = card.querySelector(".read-more");
+    button.addEventListener("click", () => showModal(tip));
   });
 }
 
@@ -45,14 +46,14 @@ function showModal(tip) {
   `;
   document.body.appendChild(modal);
 
-  // Close on X
+  // Close when clicking the X
   modal.querySelector(".close").addEventListener("click", () => modal.remove());
 
-  // Close when clicking outside modal
+  // Close when clicking outside the modal box
   modal.addEventListener("click", e => {
     if (e.target === modal) modal.remove();
   });
 }
 
-// Run on page load
+// Run everything after DOM is ready
 document.addEventListener("DOMContentLoaded", loadTips);
