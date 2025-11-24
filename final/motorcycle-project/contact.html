@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Zach Bruce" />
+  <meta name="description" content="Contact RideSmart for motorcycle riding questions or to join our mailing list." />
+  <title>RideSmart - Contact</title>
+  <link rel="icon" href="images/favicon.png" />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script type="module" src="scripts/contact.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">RideSmart</a>
+      <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="learning.html">Learning & Tips</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-header">
+      <h1>Contact RideSmart</h1>
+      <p>Have a question, comment, or want to join our rider community? Fill out the form below!</p>
+    </section>
+
+    <section class="contact-form-section">
+      <form action="form-action.html" method="get" class="contact-form">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <label for="subscribe" class="checkbox">
+          <input type="checkbox" id="subscribe" name="subscribe" value="yes" />
+          Join our rider mailing list
+        </label>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 RideSmart | <a href="attributions.html">Attributions</a></p>
+  </footer>
+</body>
+</html>
